@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/images/favicon-32x32.png">
   
   <title>Frontend Mentor | News homepage</title>
 
@@ -17,17 +17,17 @@
 <body>
 
   <header class="header">
-    <nav class="nav" aria-label="Main navigation">
+    <nav class="nav" aria-label="Primary">
       <div class="nav_logo_wrap">
         <a href="#" class="nav_logo">
           <img src="/src/assets/images/logo.svg" alt="News homepage logo" class="nav_logo_img">
         </a>
       </div>
 
-      <button class="menu_btn" id="menu_btn" aria-label="Menu button" aria-expanded="false">
+      <button class="menu_btn" id="menu_btn" aria-label="Menu button" aria-expanded="false" aria-live="polite" aria-controls="nav_links_ul">
         <span class="sr_only">Menu</span>
-        <img src="/src/assets/images/icon-menu.svg" aria-hidden="true" alt="Menu icon" id="open" class="menu_btn_img open">
-        <img src="/src/assets/images/icon-menu-close.svg" aria-hidden="true" alt="Close Menu icon" id="close" class="menu_btn_img close">
+        <img src="/src/assets/images/icon-menu.svg" aria-hidden="true" alt="Open Menu icon" id="open" class="menu_btn_img open">
+        <img src="/src/assets/images/icon-menu-close.svg" aria-hidden="true" alt="Close Menu icon" id="close" class="menu_btn_img close hidden">
       </button>
 
       <ul class="nav_links_ul" id="nav_links_ul">
@@ -52,8 +52,9 @@
 
   <main class="main">
     <div class="main_wrap">
+
       <div class="main_top">
-        <div class="main_left">
+        <section aria-labelledby="main_h1" class="main_left">
           <div class="main_left_top">
             <div class="main_left_top_img_wrap">
               <img src="/src/assets/images/image-web-3-mobile.jpg" alt="fill with chatgpt" class="main_left_top_img">
@@ -61,7 +62,7 @@
           </div>
           <div class="main_left_btm">
             <div class="main_left_btm_lt">
-              <h1 class="main_h1">The Bright Future of Web 3.0?</h1>
+              <h1 class="main_h1" id="main_h1">The Bright Future of Web 3.0?</h1>
             </div>
             <div class="main_left_btm_rt">
               <p class="main_left_btm_rt_p">We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
@@ -69,9 +70,9 @@
               <a href="#" class="main_left_btm_rt_a">Read more</a>
             </div>
           </div>
-        </div>
-        <div class="main_right">
-          <h2 class="main_right_h2">New</h2>
+        </section>
+        <section aria-labelledby="main_right_h2" class="main_right">
+          <h2 class="main_right_h2" id="main_right_h2">New</h2>
           <div class="main_right_link_wrap">
             <a href="#" class="main_right_link">
               <h3 class="main_right_h3">Hydrogen VS Electric Cars</h3>
@@ -88,10 +89,11 @@
               <p class="main_right_p">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
             </a>
           </div>
-        </div>
+        </section>
       </div>
+
       <div class="main_btm">
-        <section class="articles_section">
+        <section aria-label="News Articles" role="region" class="articles_section">
           <a href="#" class="article_card">
             <div class="article_card_img_cont">
               <img src="/src/assets/images/image-retro-pcs.jpg" alt="Retro PCs" class="article_card_img">
