@@ -1,7 +1,7 @@
 @use 'variables' as vars
 @use 'breakpoint' as bp
 @use 'slider'
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap')
 
 body
     font-family: "Inter", sans-serif
@@ -25,6 +25,16 @@ body
 header, main, footer
     padding: 0 vars.$spacing_2
 
+.header
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    background: vars.$almost_white
+
+.main
+    padding-top: 5.5rem
+
 .nav
     display: flex
     justify-content: space-between
@@ -35,8 +45,6 @@ header, main, footer
 .nav_logo_wrap
     inline-size: 2.81rem
 
-
-
 .menu_btn
     display: flex
     align-items: center
@@ -46,11 +54,52 @@ header, main, footer
     cursor: pointer
     inline-size: 2.5rem
     block-size: 1.9rem
-    
+    position: relative
+    z-index: 3
+
 .nav_links_ul
-    position: absolute
-    left: -100%
+    position: fixed
     top: 0
+    right: -100%
+    background-color: vars.$almost_white
+    min-block-size: 100vh
+    inline-size: 68.3%
+    list-style: none
+    padding: 9rem vars.$spacing_3
+    display: flex
+    flex-direction: column
+    gap: vars.$spacing_3
+    z-index: 2
+    transition: all 0.3s ease-in-out
+
+.nav_links_ul.active
+    right: 0
+
+.overlay
+    background: vars.$dark_space_blue
+    opacity: 0.5
+    position: fixed
+    top: 0
+    left: 0
+    inline-size: 100%
+    block-size: 100vh
+    z-index: 1
+    display: none
+    transition: all 0.4s ease-in-out
+
+.overlay.active
+    display: block
+
+.nav_link
+    text-decoration: none
+    color: vars.$dark_space_blue
+    font-size: 1.125rem
+    line-height: 1.33
+    inline-size: 100%
+    display: block
+
+    &:hover, &:focus-visible, &:focus-visible, &:active
+        color: vars.$light_vermillion
 
 .sr_only
     opacity: 0
@@ -62,17 +111,156 @@ header, main, footer
 .close.hidden
     display: none
 
+.main_wrap
+    display: flex
+    flex-direction: column
+    gap: 4rem
+
+.main_top
+    display: flex
+    flex-direction: column
+    gap: 4rem
+
+.main_left
+    display: flex
+    flex-direction: column
+    gap: vars.$spacing_3
+
+.main_left_btm
+    display: flex
+    flex-direction: column
+    gap: vars.$spacing_2
+
+.main_left_btm_rt
+    display: flex
+    flex-direction: column
+    gap: vars.$spacing_3
+
+.main_h1
+    font-size: vars.$spacing_5
+    line-height: 1.0
+    color: vars.$dark_space_blue
+
+.main_left_btm_rt_p
+    font-size: 0.94rem
+    line-height: 1.73
+    color: vars.$gun_metal
+
+.main_left_btm_rt_a
+    padding: 0.75rem 2.1rem
+    background-color: vars.$light_vermillion
+    color: vars.$dark_space_blue
+    line-height: 1.71
+    text-decoration: none
+    inline-size: fit-content
+    letter-spacing: 0.28rem
+    transition: all 0.3s ease-in-out
+
+    &:hover
+        background-color: vars.$dark_space_blue
+        color: vars.$almost_white
+
+.main_right
+    background-color: vars.$dark_space_blue
+    padding: vars.$spacing_3 1.25rem
+    display: flex
+    flex-direction: column
+    gap: 2.2rem
+
+.main_right_h2
+    font-size: vars.$spacing_4
+    line-height: 1.0
+    color: vars.$yellow
+
+.main_right_link_wrap
+    display: flex
+    flex-direction: column
+
+    a
+        text-decoration: none
+
+    a:nth-child(1)
+        padding-bottom: 1.88rem
+
+    a:nth-child(2)
+        padding-bottom: 1.88rem
+        padding-top: 1.88rem
+        border-top: 0.063rem solid vars.$gun_metal
+        border-bottom: 0.063rem solid vars.$gun_metal
+
+    a:nth-child(3)
+        padding-top: 1.88rem
+
+.main_right_link
+    display: flex
+    flex-direction: column
+    gap: vars.$spacing_1
+
+    &:hover
+        .main_right_h3
+            color: vars.$yellow
+
+.main_right_h3
+    font-size: 1.25rem
+    line-height: 1.2
+    color: vars.$almost_white
+
+.main_right_p
+    color: vars.$silver
+    font-size: 0.94rem
+    line-height: 1.73
+
+.articles_section
+    display: flex
+    flex-direction: column
+    gap: vars.$spacing_4
+
+.article_card
+    display: flex
+    gap: vars.$spacing_3
+    align-items: center
+    justify-content: center
+    text-decoration: none
+
+    &:hover
+        .article_card_h3
+            color: vars.$light_vermillion
+
+.article_card_img_cont
+    max-inline-size: 6.25rem !important
+    max-block-size: 7.94rem !important
+
+.article_card_img
+    inline-size: 100%
+    block-size: 100%
+
+.article_number
+    color: vars.$light_vermillion
+    font-size: vars.$spacing_4
+    line-height: 1.0
+    margin-block-end: 0.75rem
+
+.article_card_h3
+    font-size: 1.125rem
+    line-height: 1.33
+    color: vars.$dark_space_blue
+    margin-block-end: 0.56rem
+    transition: all 0.3s ease-in-out
+
+.article_card_p
+    font-size: 0.94rem
+    line-height: 1.73
+    color: vars.$gun_metal
+
 .attribution_h2
     text-align: center
-    padding: 0.5rem vars.$spacing_3
+    padding: 0.75rem vars.$spacing_3
     font-size: 0.875rem
     text-wrap: initial
 
-.attribution a
+.attribution_h2 a
     color: vars.$light_vermillion
 
 @include bp.breakpoint(48rem)
-    
 
 @include bp.breakpoint(80rem)
-    
