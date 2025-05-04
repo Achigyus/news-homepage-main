@@ -92,7 +92,7 @@ header, main, footer
 
 .nav_link
     text-decoration: none
-    color: vars.$dark_space_blue
+    color: vars.$gun_metal
     font-size: 1.125rem
     line-height: 1.33
     inline-size: 100%
@@ -125,6 +125,16 @@ header, main, footer
     display: flex
     flex-direction: column
     gap: vars.$spacing_3
+
+.main_left_top_img_wrap
+    inline-size: 100%
+
+.main_left_top_img
+    inline-size: 100%
+    block-size: 100%
+
+.main_left_top_img.desktop
+    display: none
 
 .main_left_btm
     display: flex
@@ -219,8 +229,8 @@ header, main, footer
     display: flex
     gap: vars.$spacing_3
     align-items: center
-    justify-content: center
     text-decoration: none
+    flex: 1 1 0
 
     &:hover
         .article_card_h3
@@ -263,4 +273,81 @@ header, main, footer
 
 @include bp.breakpoint(48rem)
 
-@include bp.breakpoint(80rem)
+    header, main, footer
+        padding: 0 vars.$spacing_5
+
+    .nav, .main_wrap, .attribution_h2
+        max-inline-size: 69.38rem
+        margin-inline: auto
+
+    .menu_btn
+        display: none
+
+    .nav_links_ul
+        display: flex
+        position: relative
+        top: 0
+        right: 0
+        inline-size: auto
+        min-block-size: auto
+        padding: 0
+        flex-direction: row
+        gap: vars.$spacing_5
+
+    .main_left_top_img.mobile
+        display: none
+
+    .main_left_top_img.desktop
+        display: block
+
+
+@include bp.breakpoint(74.5rem)
+
+    .nav
+        margin-top: 2.31rem
+        padding: 3.75rem 0
+
+    .nav_logo_wrap
+        inline-size: 4rem
+
+    .articles_section
+        flex-direction: row
+        gap: 1.88rem
+
+    .main_top, .main_left_btm
+        flex-direction: row
+        gap: 1.875rem
+
+    .main_left_btm_lt, .main_left_btm_rt
+        flex: 1 1 0
+
+    .main_h1
+        font-size: 3.5rem
+
+    .main_left
+        gap: 1.75rem
+
+    .main_left_btm_rt
+        gap: 1.875rem
+
+    .header
+        position: relative
+
+    .main
+        padding-top: 0
+    
+    .main_right
+        flex-basis: 31.5%
+
+    .main_left
+        flex-basis: 68.5%
+
+    .main_wrap
+        gap: 4.375rem
+
+    .main_btm
+        margin-bottom: 8.125rem
+
+    .main_right_h2
+        font-size: vars.$spacing_5
+

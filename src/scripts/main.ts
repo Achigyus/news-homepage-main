@@ -8,9 +8,6 @@ let menuLinks = document.querySelectorAll('#nav_links_ul li a') as NodeListOf<HT
 
 function toggleMenu() {
     if (menuBtn) {
-        console.log(
-            'Menu button clicked. Current state: ' + menuOpenState + '. Toggling...'
-        )
         let openImg = menuBtn.querySelector('img.open') as HTMLImageElement
         let closeImg = menuBtn.querySelector('img.close') as HTMLImageElement
         let menu = document.getElementById('nav_links_ul') as HTMLUListElement
